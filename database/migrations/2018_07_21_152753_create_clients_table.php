@@ -20,7 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('codigo')->unique();
             $table->string('telefone');
             $table->string('status');
-            $table->string('limite-credito');
+            $table->string('limitecredito');
             $table->timestamps();
 
         });

@@ -11,11 +11,12 @@ class ClienteController extends Controller
     	$novoCliente = new Client;
 
     	$novoCliente->nome= $request->nome;
-    	$nomeCliente->codigo= $request->codigo;
-    	$nomeCliente->endereco=$request->endereco;
-    	$nomeCliente->telefone=$request->telefone;
-    	$nomeCliente->status=$request->status;
-    	$nomeCliente->creditolimite=$request->creditolimite;
+    	$novoCliente->codigo= $request->codigo;
+    	$novoCliente->endereco=$request->endereco;
+    	$novoCliente->telefone=$request->telefone;
+    	$novoCliente->status=$request->status;
+    	$novoCliente->limitecredito=$request->limitecredito;
+        $novoCliente->save();
     }
     public function getCliente($id){
     	$cliente=Produto::findorfail($id);
@@ -32,14 +33,14 @@ class ClienteController extends Controller
     	if($request->endereco){
     		$cliente->endereco=$request->endereco;
     	}
-    	if($request->){
+    	if($request->telefone){
     		$cliente->telefone=$request->telefone;
     	}
-    	if($request->){
+    	if($request->status){
     		$cliente->status=$request->status;
     	}
-    	if($request->){
-    		$cliente->creditolimite=$request->creditolimite;
+    	if($request->limitecredito){
+    		$cliente->limitecredito=$request->limitecredito;
     	}
     	$produto->save();
     }
